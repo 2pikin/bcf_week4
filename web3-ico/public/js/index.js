@@ -109,56 +109,13 @@ const updateBalance = async () => {
   const accounts  = await web3.eth.getAccounts();
   const abi = [
   	{
-  		"constant": false,
-  		"inputs": [],
-  		"name": "buy",
-  		"outputs": [],
-  		"payable": true,
-  		"stateMutability": "payable",
-  		"type": "function"
-  	},
-  	{
-  		"constant": false,
-  		"inputs": [
-  			{
-  				"name": "_to",
-  				"type": "address"
-  			},
-  			{
-  				"name": "_value",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "transfer",
-  		"outputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "function"
-  	},
-  	{
-  		"payable": true,
-  		"stateMutability": "payable",
-  		"type": "fallback"
-  	},
-  	{
-  		"inputs": [],
-  		"payable": false,
-  		"stateMutability": "nonpayable",
-  		"type": "constructor"
-  	},
-  	{
   		"constant": true,
-  		"inputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
-  		"name": "address_list",
+  		"inputs": [],
+  		"name": "index",
   		"outputs": [
   			{
   				"name": "",
-  				"type": "address"
+  				"type": "uint256"
   			}
   		],
   		"payable": false,
@@ -186,16 +143,39 @@ const updateBalance = async () => {
   	},
   	{
   		"constant": true,
-  		"inputs": [],
-  		"name": "buyPrice",
-  		"outputs": [
+  		"inputs": [
   			{
   				"name": "",
   				"type": "uint256"
   			}
   		],
+  		"name": "address_list",
+  		"outputs": [
+  			{
+  				"name": "",
+  				"type": "address"
+  			}
+  		],
   		"payable": false,
   		"stateMutability": "view",
+  		"type": "function"
+  	},
+  	{
+  		"constant": false,
+  		"inputs": [
+  			{
+  				"name": "_to",
+  				"type": "address"
+  			},
+  			{
+  				"name": "_value",
+  				"type": "uint256"
+  			}
+  		],
+  		"name": "transfer",
+  		"outputs": [],
+  		"payable": false,
+  		"stateMutability": "nonpayable",
   		"type": "function"
   	},
   	{
@@ -218,18 +198,10 @@ const updateBalance = async () => {
   		"type": "function"
   	},
   	{
-  		"constant": true,
   		"inputs": [],
-  		"name": "index",
-  		"outputs": [
-  			{
-  				"name": "",
-  				"type": "uint256"
-  			}
-  		],
   		"payable": false,
-  		"stateMutability": "view",
-  		"type": "function"
+  		"stateMutability": "nonpayable",
+  		"type": "constructor"
   	}
   ];
   const SimpleToken = new web3.eth.Contract(abi, '0xa59d5637b6cb82436423624a028ac35211772c25');
