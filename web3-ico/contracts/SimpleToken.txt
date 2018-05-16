@@ -1,0 +1,27 @@
+pragma solidity ^0.4.23;
+
+contract SimpleToken {
+    mapping(address => uint) public balanceOf;
+	address[] public address_list;
+	uint public index = 0;
+
+    constructor() public {
+        balanceOf[msg.sender] = 100;
+        address_list.push(msg.sender);
+    }
+
+    function transfer(address _to, uint _value) external {
+        require(balanceOf[msg.sender] >= _value);
+        require(balanceOf[_to] + _value >= balanceOf[_to]);
+
+        balanceOf[msg.sender] -= _value;
+        balanceOf[_to] += _value;
+
+        address_list.push(_to);
+        index++;
+    }
+
+    function getBalance(address _addr) public view returns(uint _balance) {
+        _balance = balanceOf[_addr];
+    }
+}

@@ -24,7 +24,7 @@ function randomBar(date, lastClose) {
 function getRandomData(date, count) {
 	var dateFormat = 'MMMM DD YYYY';
 	var date = moment(date, dateFormat);
-	var data = [randomBar(date, 30)];
+	var data = [randomBar(date, 10)];
 	while (data.length < count) {
 		date = date.clone().add(1, 'd');
 		if (date.isoWeekday() <= 5) {

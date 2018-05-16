@@ -16,14 +16,25 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo center">Simple ICO</a>
       </div>
+      <div id="progressbar" class="progress hide">
+        <div class="indeterminate"></div>
+      </div>
     </nav>
+
+    <div style="margin-top:10px;">
 
     <div class="row">
       <div class="col s4">
         <div class="card">
           <div class="card-content">
-            <span class="card-title">Token Нolders</span>
-            <canvas id="popChart"></canvas>
+            <span class="card-title">Profile Information</span>
+            <p>Name: <b>Ivan</b> &nbsp;&nbsp;&nbsp;Surname: <b>Ivanov</b> &nbsp;&nbsp;&nbsp;Age: <b>23</b></p>
+            <br/>
+            <p>Token Address:<br/>0xa59d5637b6cb82436423624a028ac35211772c25</p>
+            <p>ICO Address:<br/>0x61ce1269ed504f7e7ffa142bf0f944b82f382991</p>
+          </div>
+          <div class="card-action">
+            <span class="card-title">Your Balance: <span id="token"></span> VAT</span>
           </div>
         </div>
       </div>
@@ -33,11 +44,11 @@
           <div class="card-content">
             <span class="card-title">Buy</span>
             <div class="input-field">
-              <input id="tokens" type="email" class="validate">
-              <label for="tokens">Tokens</label>
+              <input id="inputEthers" type="email">
+              <label for="inputEthers">Tokens</label>
               <span class="helper-text" data-error="wrong" data-success="right">Enter value in ether</span>
               <br/>
-              <a class="waves-effect waves-light btn-large">GET TOKENS!</a>
+              <a class="waves-effect waves-light btn-large" id="buy-button">GET TOKENS!</a>
             </div>
           </div>
         </div>
@@ -46,7 +57,7 @@
       <div class="col s4">
         <div class="card">
           <div class="card-content">
-            <span class="card-title">Curent Round: Round 1</span>
+            <span class="card-title">Current Round: Round 1</span>
             <br/>
             <p>Round 1: May 10 - May 28<br/>
             Round 2: Jun 1 - Jul 16<br/>
@@ -64,50 +75,49 @@
       <div class="col s4">
         <div class="card">
           <div class="card-content">
-            <span class="card-title">Profile Information</span>
-            <p>Name: <b>Ivan</b> &nbsp;&nbsp;&nbsp;Surname: <b>Ivanov</b> &nbsp;&nbsp;&nbsp;Age: <b>23</b></p>
+            <span class="card-title">Token Нolders</span>
+            <canvas id="popChart"></canvas>
             <br/>
-            <span class="card-title">Your Balance:
-            <br/>
-            0 VAT</span>
+            <div class="card-action">
+              <br/><br/>
+              <span class="card-title">Round 1 with 30% discount end in:</span>
+              <div id="clockdiv">
+                <div>
+                  <span class="days"></span>
+                  <div class="smalltext">Days</div>
+                </div>
+                <div>
+                  <span class="hours"></span>
+                  <div class="smalltext">Hours</div>
+                </div>
+                <div>
+                  <span class="minutes"></span>
+                  <div class="smalltext">Minutes</div>
+                </div>
+                <div>
+                  <span class="seconds"></span>
+                  <div class="smalltext">Seconds</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
       <div class="col s8">
         <div class="card">
           <div class="card-content">
-            <span class="card-title">Exchange Rate</span>
+            <span class="card-title">Exchange Rate [ 0.01ETH / VAT ]</span>
             <br/>
             <canvas id="chart1"></canvas>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="row center">
-      <h2>Round 1 ends in:</h2>
-      <div id="clockdiv">
-        <div>
-          <span class="days"></span>
-          <div class="smalltext">Days</div>
-        </div>
-        <div>
-          <span class="hours"></span>
-          <div class="smalltext">Hours</div>
-        </div>
-        <div>
-          <span class="minutes"></span>
-          <div class="smalltext">Minutes</div>
-        </div>
-        <div>
-          <span class="seconds"></span>
-          <div class="smalltext">Seconds</div>
-        </div>
-      </div>
-    </div
-
+</div>
     <!--JavaScript at end of body for optimized loading-->
     <script src="js/materialize.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="js/moment.js"></script>
     <script src="js/Chart.min.js"></script>
     <script src="js/Chart.Financial.js"></script>

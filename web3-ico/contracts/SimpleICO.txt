@@ -1,0 +1,29 @@
+pragma solidity ^0.4.23;
+
+
+interface SimpleToken {
+    function transfer(address _to, uint _value) external;
+}
+
+
+contract SimpleICO {
+	uint public constant buyPrice = 1 finney;
+	SimpleToken token;
+	
+	constructor(SimpleToken _token) public {
+	    token = _token;
+	}
+
+    function () public payable {
+        _buy(msg.sender, msg.value);
+    }
+    
+    function buy() public payable {
+        _buy(msg.sender, msg.value);
+    }
+    
+    function _buy(address _to, uint _value) internal returns (uint tokens) {
+        tokens = _value / buyPrice;
+        token.transfer(_to, tokens);
+    }
+}
