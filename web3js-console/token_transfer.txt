@@ -1,0 +1,8 @@
+var abi = ... // get from remix ide
+var contract = web3.eth.contract(abi).at('0xf483b96cf7a986355e584859c04328b59ec7010e')
+
+// get token account balance
+contract.balanceOf('0x8d718E77164FbA48263c45C977476c917F9adADc', (err, res) => console.log(res))
+
+// transfer 10 tokens to another account
+contract.transfer('0x3e36F6b7d38E832d9fdA022834E230731295F14b', 1000, (err, res) => console.log(res))
